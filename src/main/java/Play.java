@@ -1,16 +1,14 @@
+
 /**
  * Created by e165757 on 2017/01/20.
  */
 import java.util.Scanner;
 public class Play {
     private String name;
-    private int playerPoint;
+    private  int playerPoint;
     private  int place;
     private int saikoro;
     static int n=1;
-    int num;
-
-    Map map=new Map();
 
 
     public Play(String name, int playerPoint, int place,int saikoro) {
@@ -20,7 +18,6 @@ public class Play {
         this.playerPoint=playerPoint;
     }
     public void setName() {
-
         System.out.println("playername"+n+"を入力してください");
         Scanner scan = new Scanner(System.in);
         name= scan.next();
@@ -33,28 +30,34 @@ public class Play {
     public String getName(){
         return name;
     }
+
+    private Play(int playerPoint){
+        this.playerPoint=playerPoint;
+    }
+
+    public  void setPlayerPoint(int playerPoint){
+         this.playerPoint+=playerPoint;
+    }
+    public  static Play setPoint(int point){
+        return new Play(point);
+    }
     public int getpoint(){
         return playerPoint;
     }
+
     public void game(){
         System.out.println(name+"さんEnterキーを押してサイコロを振ろう！");
         Scanner scan = new Scanner(System.in);
         scan.nextLine();
-        num=(int)(Math.random() * 6) + 1;
-        System.out.println(num);
-        place +=num;
-
+        saikoro=(int)(Math.random() * 6) + 1;
+        System.out.println(saikoro);
+        place +=saikoro;
         if(place>=25){
             place=25;
         }
-        comparison(place);
+        Map.mapPlace(place);
         if(place==10){
             place=0;
         }
     }
-
-    public void comparison(int place){
-        Map.mapPlace(place);
-    }
-
 }

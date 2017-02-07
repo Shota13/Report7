@@ -1,7 +1,9 @@
+
 /**
  * Created by e165757 on 2017/01/20.
  */
 public class Main {
+
     public static void main(String[] args){
         int place1,place2;
         int point1,point2;
@@ -29,12 +31,13 @@ public class Main {
         point2=player2.getpoint();
         System.out.println("---------ランキング発表!!!---------");
         if(point1>point2){
-            System.out.println("1st" +player1.getName()+"    "+player1.getpoint()+"point");
-            System.out.println("2st" +player2.getName()+"    "+player2.getpoint()+"point");
+            System.out.println("1st " +player1.getName()+"    "+player1.getpoint()+"point");
+            System.out.println("2st " +player2.getName()+"    "+player2.getpoint()+"point");
         }
+
         else{
-            System.out.println("1st" +player2.getName()+"    "+player2.getpoint()+"point");
-            System.out.println("2st" +player1.getName()+"    "+player1.getpoint()+"point");
+            System.out.println("1st　" +player2.getName()+"    "+player2.getpoint()+"point");
+            System.out.println("2st　" +player1.getName()+"    "+player1.getpoint()+"point");
 
         }
     }
